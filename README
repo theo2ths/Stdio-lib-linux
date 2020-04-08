@@ -1,7 +1,4 @@
-----TEMA1 SO----
-Nume: Stoica
-Prenume: Theodor Nicolae
-Grupa: 334CB
+
 
 -----Solutie-----
 	
@@ -26,11 +23,6 @@ utilizand functiile  so_fgetc si so_fputc.
 Pentru exercitiul cu popen m-am inspirat din laboratorul cu  setarea pipe-ului. Fork creeaza un nou proces, iar execl 
 schimba imaginea acestuia si executa altul.
 
-
-
-Consider ca tema a fost utila,intrucat am invatat cum functioneaza o biblioteca stdio
-si efectiv ce se intampla cu un fisier cand se aplica diverse operatii(cum se muta cursorul,
-cand trebuie folosit apelul de sistem, cand scriu si cand citesc din buffer).
 Functionalitati extra:
 	Functia de xwrite plus o functie de parsare pentru a deschide fisierele cu open
 (returnez rezultatul saurilor pentru fiecare tip de deschidere).
@@ -54,11 +46,7 @@ Am implementat tot.
 
 Rulare:
 	Linux: ./so-cpp [-D <SYMBOL>[=<MAPPING>]] [-I <DIR>] [<INFILE>] [ [-o] <OUTFILE>]
-	WIndows: urmeaza maine:D
-Bibliografie:
-	Laboratorul 2 operatii I/O simple(am folosit efectiv o functie din solutie, mai precis
-xwrite pentru a scrie si n cazul in care nu scriu cat ii dau) + laboratorul cu setarea pipeului
-	Am citit man-ul pentru functii.
+
 
 
 
