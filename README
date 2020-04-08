@@ -1,0 +1,64 @@
+----TEMA1 SO----
+Nume: Stoica
+Prenume: Theodor Nicolae
+Grupa: 334CB
+
+-----Solutie-----
+	
+	Am ales ca in structura de fisier sa am  pun un camp _file care sa retina file
+descriptorul unui fisier deschis cu open, capatul din stanga bufpoz, capatul din dreapta
+bufcnt(care se plimba cand scriu caractere).Retin dimensiunea
+maxima a bufferului, impreuna cu 2 flaguri de eroare si de EOF, precum si un flag 
+pentru flush(sa mi spuna cand s a efectuat o operatie de write), bufferul in care
+scriu/citesc si pidul.
+	Am respectat conditiile din tema(+ documentatie):
+ Proprietatea esențială a bibliotecii stdio este că aceasta face buffering. 
+O structură SO_FILE are un buffer asociat, iar operațiile de citire/scriere se folosesc de acest buffer:
+Operațiile de citire (so_fgetc, so_fread) întorc datele direct din buffer. Atunci când bufferul este gol sau 
+nu există date suficiente, acesta este populat cu date din fișier, folosind API-ul pus la dispoziție de sistemul de
+operare (read/ReadFile).
+    Operațiile de scriere (so_fputc, so_fwrite) scriu datele în buffer. În situația când bufferul este plin (sau când se 
+apelează so_fflush), datele se scriu în fișier, folosind API-ul pus la dispoziție de sistemul de operare(write/WriteFile).
+
+	----Implementarea functiilor principale de so_fread si so_fwrite se realizeaza pe baza
+functiilor so_fgetc si so_fputc. Se scriu sau se  citesc caractere pe rand
+utilizand functiile  so_fgetc si so_fputc. 
+Pentru exercitiul cu popen m-am inspirat din laboratorul cu  setarea pipe-ului. Fork creeaza un nou proces, iar execl 
+schimba imaginea acestuia si executa altul.
+
+
+
+Consider ca tema a fost utila,intrucat am invatat cum functioneaza o biblioteca stdio
+si efectiv ce se intampla cu un fisier cand se aplica diverse operatii(cum se muta cursorul,
+cand trebuie folosit apelul de sistem, cand scriu si cand citesc din buffer).
+Functionalitati extra:
+	Functia de xwrite plus o functie de parsare pentru a deschide fisierele cu open
+(returnez rezultatul saurilor pentru fiecare tip de deschidere).
+
+Dificultati:
+	Probleme cu inchiderea pipe-urilor, numarul de apeluri de sistem in cazul
+testelor cu random chunked(unde aveam nevoie de xwrite).
+
+
+-----Neimplementat
+UPDATE:
+	POPEN PCLOSE pentru Windows.
+	Intarziere 7zile(am tot amanat, am crezut ca e cancer pe windows, cand de fapt trebuiau schimbate
+apelurile de sistem, functionalitatea ramanand neschimbata).
+
+Am implementat tot.
+
+----- Compilare
+
+	Makefile-ul genereaza fisierul obiect so_stdio.o si apoi biblioteca dinamica libso_stdio.so.
+
+Rulare:
+	Linux: ./so-cpp [-D <SYMBOL>[=<MAPPING>]] [-I <DIR>] [<INFILE>] [ [-o] <OUTFILE>]
+	WIndows: urmeaza maine:D
+Bibliografie:
+	Laboratorul 2 operatii I/O simple(am folosit efectiv o functie din solutie, mai precis
+xwrite pentru a scrie si n cazul in care nu scriu cat ii dau) + laboratorul cu setarea pipeului
+	Am citit man-ul pentru functii.
+
+
+
