@@ -1,4 +1,4 @@
-
+Implementare biblioteca stdio 
 
 -----Solutie-----
 	
@@ -26,19 +26,6 @@ schimba imaginea acestuia si executa altul.
 Functionalitati extra:
 	Functia de xwrite plus o functie de parsare pentru a deschide fisierele cu open
 (returnez rezultatul saurilor pentru fiecare tip de deschidere).
-
-Dificultati:
-	Probleme cu inchiderea pipe-urilor, numarul de apeluri de sistem in cazul
-testelor cu random chunked(unde aveam nevoie de xwrite).
-
-
------Neimplementat
-UPDATE:
-	POPEN PCLOSE pentru Windows.
-	Intarziere 7zile(am tot amanat, am crezut ca e cancer pe windows, cand de fapt trebuiau schimbate
-apelurile de sistem, functionalitatea ramanand neschimbata).
-
-Am implementat tot.
 
 ----- Compilare
 
